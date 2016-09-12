@@ -16,10 +16,6 @@ package com.trycatch.mysnackbar;
  * limitations under the License.
  */
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -37,13 +33,8 @@ import android.support.annotation.StringRes;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.SwipeDismissBehavior;
 import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPropertyAnimatorListenerAdapter;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -52,7 +43,6 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -277,7 +267,6 @@ public final class TSnackbar {
      * <p/>
      * <p>Having a {@link CoordinatorLayout} in your view hierarchy allows TSnackbar to enable
      * certain features, such as swipe-to-dismiss and automatically moving of widgets like
-     * {@link FloatingActionButton}.
      *
      * @param view     The view to find a parent from.
      * @param text     The text to show.  Can be formatted text.
@@ -310,7 +299,6 @@ public final class TSnackbar {
      * <p/>
      * <p>Having a {@link CoordinatorLayout} in your view hierarchy allows TSnackbar to enable
      * certain features, such as swipe-to-dismiss and automatically moving of widgets like
-     * {@link FloatingActionButton}.
      *
      * @param view     The view to find a parent from.
      * @param resId    The resource id of the string resource to use. Can be formatted text.
@@ -403,7 +391,7 @@ public final class TSnackbar {
      * @return
      */
     public TSnackbar addIconProgressLoading(Drawable drawable,boolean left,boolean right) {
-        final ObjectAnimator animator = ObjectAnimator.ofInt(drawable, "level", 0, 10000);
+        /*final ObjectAnimator animator = ObjectAnimator.ofInt(drawable, "level", 0, 10000);
         animator.setDuration(1000);
         animator.setInterpolator(new LinearInterpolator());
         animator.setRepeatCount(ValueAnimator.INFINITE);
@@ -436,7 +424,7 @@ public final class TSnackbar {
 
             }
         });
-        animator.start();
+        animator.start();*/
         return this;
     }
 
